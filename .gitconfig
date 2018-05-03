@@ -1,0 +1,13 @@
+[user]
+	name = hiforujitaaki
+	email = hirofujitaaki.gmail.com
+[core]
+	editor = vim
+	excludesfile = /Users/jimmiefujita/.gitignore_global
+[color]
+	ui = true
+[init]
+[init]
+	templatedir = ~/.git_template
+[alias]
+	ctags = !.git/hooks/ctags

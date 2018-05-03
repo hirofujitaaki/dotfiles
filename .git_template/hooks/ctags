@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+PATH="/usr/local/bin:$PATH"
+cd "$(dirname "${BASH_SOURCE:-$0}")"; cd ../../
+trap "rm -f .git/tags.$$" EXIT
+
+# ctags --tag-relative -R -f .git/tags.$$ --exclude=.git
+
+ctags --tag-relative -R -f .git/tags.$$ --python-kinds=-i --exclude=.git
+
+# ctags --tag-relative -R --fields=+l --languages=python --python-kinds=-iv -f .git/tags.$$ --exclude=.git $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")
+# https://www.fusionbox.com/blog/detail/navigating-your-django-project-with-vim-and-ctags/590/
+
+# ctags --tag-relative -R --fields=+l --languages=python --python-kinds=-iv -f .git/tags.$$ --exclude=.git --exclude=/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/ $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")
+# http://stackoverflow.com/questions/25819649/exuberant-ctags-exclude-directories
+
+mv .git/tags.$$ .git/tags
