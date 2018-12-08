@@ -206,6 +206,7 @@ let g:syntastic_javascript_checker = ['jshint']
 let g:syntastic_json_checker = ['jsonlint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_scala_checkers = ['fsc']
+let g:syntastic_sql_checkers = ['sqlint']
 " linter for html disabled
 let g:syntastic_html_checkers = ['']
 
