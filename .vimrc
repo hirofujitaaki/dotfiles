@@ -182,6 +182,9 @@ imap <C-d> <C-[>ldf<space>i
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" convert html to javascript or vice versa.
+vmap <silent> ;h :s?^\(\s*\)+ `\([^`]\+\)`,*\s*$?\1\2?g<CR>
+vmap <silent> ;j :s?^\(\s*\)\(.*\)\s*$? \1 + `\2`?<CR>
 
 """""""""""""""""""""""""""""""
 "Settings
